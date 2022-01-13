@@ -4,8 +4,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class QuantityModifierServlet extends HttpServlet {
     @Override
@@ -26,14 +28,26 @@ public class QuantityModifierServlet extends HttpServlet {
         String subtract = request.getParameter("subtract");
         String itemName = request.getParameter("itemName");
         int itemQuantity = Integer.parseInt(request.getParameter("itemQuantity"));
+
         HttpSession session = request.getSession();
         List<ItemBean> myItems = (List<ItemBean>) session.getAttribute("CartItems");
+        List<ItemBean> shopItems = (List<ItemBean>) session.getAttribute("ShopItems");
+
+
+        Map<String, Integer> availableQuantity = new HashMap<>();
+
+        for( ItemBean items : shopItems) {
+
+            availableQuantity.put(items.getName(),items.getQuantity());
+        }
+
         int i = 0;
         if(add!=null && subtract==null)
         {
             for( ItemBean items : myItems)
             {
-                if (items.getName().equals(itemName)) {
+                if (items.getName().equals(itemName) ) {
+                   if(availableQuantity.get(itemName)>itemQuantity)
                     myItems.get(i).setQuantity(itemQuantity+1);
                 }
                 i++;
@@ -45,7 +59,8 @@ public class QuantityModifierServlet extends HttpServlet {
             for( ItemBean items : myItems)
             {
                 if (items.getName().equals(itemName)) {
-                    myItems.get(i).setQuantity(itemQuantity-1);
+                    if(itemQuantity>0)
+                        myItems.get(i).setQuantity(itemQuantity-1);
                 }
                 i++;
             }
