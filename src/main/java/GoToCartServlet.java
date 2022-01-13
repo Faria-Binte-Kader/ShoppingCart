@@ -16,6 +16,9 @@ public class GoToCartServlet extends HttpServlet {
     /**
      * Method to show available items from the shop-items list, to select item for adding to the cart,
      * afte adding item, redirecting to the page to see the items in the cart.
+     *
+     * Allows duplicate item in the cart, but logically it should not be the case, worked with the thought
+     * that user will not add another duplicate item, rather increase the number of the item from /mycart
      * @param request
      * @param response
      * @throws ServletException
