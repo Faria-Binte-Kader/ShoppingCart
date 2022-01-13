@@ -13,6 +13,13 @@ public class DeleteItemServlet extends HttpServlet {
 
     }
 
+    /**
+     * Method to delete an item from the cart
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String itemName = request.getParameter("itemName");

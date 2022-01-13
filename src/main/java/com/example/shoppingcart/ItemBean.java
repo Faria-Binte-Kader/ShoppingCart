@@ -1,6 +1,9 @@
 package com.example.shoppingcart;
 import java.io.Serializable;
 
+/**
+ * Java bean class for each item object of the cart
+ */
 public class ItemBean implements Serializable {
     private int quantity;
     private int price;

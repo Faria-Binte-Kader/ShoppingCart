@@ -13,6 +13,13 @@ public class QuantityModifierServlet extends HttpServlet {
 
     }
 
+    /**
+     * Method to increase or decrease the quantity of the items in the cart.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String add = request.getParameter("add");

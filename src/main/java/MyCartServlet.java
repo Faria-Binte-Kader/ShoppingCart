@@ -12,6 +12,13 @@ public class MyCartServlet extends HttpServlet {
 
     }
 
+    /**
+     * To create the mycart page with the checkout, add, subtract and delete buttons.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user = null;

@@ -14,6 +14,13 @@ public class HomeServlet extends HttpServlet {
 
     }
 
+    /**
+     * Servlet to welcome the user to the home page.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user = null;

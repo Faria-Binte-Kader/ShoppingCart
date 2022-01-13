@@ -13,6 +13,14 @@ public class SignupServlet extends HttpServlet {
 
     }
 
+    /**
+     * Saves the username and password of a user, so we did not have not hard code the username and password.
+     * Saves the shop item list information as a global list variable.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);

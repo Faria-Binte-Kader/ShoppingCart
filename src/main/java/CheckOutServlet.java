@@ -12,6 +12,13 @@ public class CheckOutServlet extends HttpServlet {
 
     }
 
+    /**
+     * For clearing out the cart and decreasing quantity of the items after checking out.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

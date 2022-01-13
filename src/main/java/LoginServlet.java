@@ -12,6 +12,14 @@ public class LoginServlet extends HttpServlet {
 
     }
 
+    /**
+     * Matches with the signed up user-name and password, if matches logs in the user, if not
+     * shows a error message.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
